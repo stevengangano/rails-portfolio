@@ -1,0 +1,11 @@
+<h1> Home </h1>
+
+<h1> Hi, <%= current_user.first_name if current_user %> welcome to the page! </h1>
+
+<%= login_helper %> <br>
+
+<%= sample_helper %>
+
+<%= content_tag :h1, class: "my-special-class" do %>
+  Hi, I'm in a h1 tag
+<% end %>

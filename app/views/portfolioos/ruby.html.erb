@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Blogs</h1>
+
+<a href="portfolio/new"> Create New Item </a></br><br>
+
+<%= link_to "Create New Item", new_portfolio_path %> </a></br><br>
+<%= new_portfolio_path %> </a></br><br>
+<%= new_portfolio_url %> </a></br><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Subtitle</th>
+      <th>Main Image</th>
+      <th>Thumb Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portfolio.each do |portfolio_item| %>
+      <tr>
+        <td><%= portfolio_item.title %></td>
+        <td><%= portfolio_item.subtitle %></td>
+        <td><%= portfolio_item.body %></td>
+        <td><%= image_tag portfolio_item.main_image unless portfolio_item.main_image.nil? %></td>
+        <td><%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %></td>
+        <td><%= link_to "Show", portfolio_show_path(portfolio_item) %></td>
+        <td><%= link_to "Edit", edit_portfolioo_path(portfolio_item) %></td>
+        <td><a href="/portfolioos/<%= portfolio_item.id %>/edit"> Edit Two</a></td>
+        <td><%= link_to "Delete", portfolioo_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
