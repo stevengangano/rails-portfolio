@@ -15,9 +15,19 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
+  #if there is current_user logged leave as is (super)
+  #if not, show Guest User
   def current_user
-    super || OpenStruct.new(name: "Guest User", first_name: "Guest",
-    last_name: "User", email: "guest@yahoo.com")
+    super || guest_user
+  end
+
+  def guest_user
+    guest = GuestUser.new
+    guest.name = "Guest User"
+    guest.first_name = "Guest"
+    guest.last_name = "User"
+    guest.email = "guest@example.com"
+    guest
   end
 
 end

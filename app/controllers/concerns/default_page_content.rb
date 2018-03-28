@@ -2,11 +2,12 @@ module DefaultPageContent
   extend ActiveSupport::Concern
 
   included do
-    before_filter :set_title
+    before_filter :set_page_defaults
   end
 
-  def set_title
+  def set_page_defaults
     @page_title = "Portfolio App"
+    @seo_keywords = "Steven Gangano portfolio"
   end
 
 end

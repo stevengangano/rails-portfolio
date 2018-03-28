@@ -1,12 +1,12 @@
 class PortfolioosController < ApplicationController
   #instead of application.html.erb, it uses portfolio.html.erb
-  layout "portfolio"
+  # layout "portfolio"
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
     @portfolio = Portfolioo.all
     @page_title = "Portfolio | Home"
   end
-
 
   def ruby
     @portfolio = Portfolioo.ruby_on_rails
@@ -59,7 +59,9 @@ class PortfolioosController < ApplicationController
   private
   #method to add data to the database
     def portfolio_params
-      params.require(:portfolioo).permit(:title, :subtitle, :body)
+      params.require(:portfolioo).permit(:title,
+                                         :subtitle,
+                                         :body)
     end
 
 end

@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :portfolioos, except: [:index, :new, :show]
-  #new show route is "portfolio/:id"
   get 'ror', to: 'portfolioos#ruby'
   get '/portfolio', to: 'portfolioos#index', as: 'portfolio'
   get '/portfolio/new', to: 'portfolioos#new', as: 'new_portfolio'

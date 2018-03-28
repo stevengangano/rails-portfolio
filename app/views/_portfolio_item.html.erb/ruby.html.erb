@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Blogs</h1>
+<h1>ROR</h1>
 
 <a href="portfolio/new"> Create New Item </a></br><br>
 
@@ -29,9 +29,9 @@
         <td><%= image_tag portfolio_item.main_image unless portfolio_item.main_image.nil? %></td>
         <td><%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %></td>
         <td><%= link_to "Show", portfolio_show_path(portfolio_item) %></td>
-        <td><%= link_to "Edit", edit_portfolioo_path(portfolio_item) if logged_in?(:site_admin) %></td>
-        <!-- <td><a href="/portfolioos/<%= portfolio_item.id %>/edit"> Edit Two</a></td> -->
-        <td><%= link_to "Delete", portfolioo_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
+        <td><%= link_to "Edit", edit_portfolioo_path(portfolio_item) %></td>
+        <td><a href="/portfolioos/<%= portfolio_item.id %>/edit"> Edit Two</a></td>
+        <td><%= link_to "Delete", portfolioo_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

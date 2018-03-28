@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title> <%= @page_title %> </title>
+
+  <meta name="keywords" content="<%= @seo_keywords %>" />
+
+  <!-- Anything in style sheets will be inherited from applicaton -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,11 +19,26 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= render "shared/nav", location: 'bottom' %>
 
-<%= yield %> <br>
+<h1> Hi, <%= current_user.first_name if current_user %> welcome to the page! </h1>
 
-<%= params.inspect %>
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/portfolio">Portfolio</a>
+          <a class="nav-link" href="/blogs">Blogs</a>
+          <%= login_helper %> <br>
+        </nav>
+      </div>
+    </header>
+
+
+  </div>
+
+  <%= yield %> <br>
+  <%= params.inspect %>
 
 </body>
 </html>

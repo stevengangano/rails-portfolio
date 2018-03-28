@@ -24,8 +24,8 @@ end
     title: "Portfolio title: #{portfolio_item}" ,
     subtitle: "Software",
     body: "Lorem ipsum",
-    main_image: "http://placehold.it/350x250",
-    thumb_image: "http://placehold.it/350x200"
+    main_image: "http://placehold.it/200x200",
+    thumb_image: "http://placehold.it/200x200"
   )
 end
 

@@ -6,7 +6,8 @@ gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
 gem 'devise'
 gem 'twitter-bootstrap-rails'
-
+gem 'bootstrap', '~> 4.0.0'
+gem 'petergate', '~> 1.8', '>= 1.8.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
