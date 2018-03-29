@@ -15,9 +15,22 @@ module PortfolioosHelper
   def nav_helper style, tag_type
 nav_links = <<NAV
 <#{tag_type}><a href="#{root_path}" class="#{style}">Home</a></#{tag_type}>
-<#{tag_type}><a href="#{portfolio_path}" class="#{style}">About me</a></#{tag_type}>   
+<#{tag_type}><a href="#{portfolio_path}" class="#{style}">About me</a></#{tag_type}>
 NAV
     nav_links.html_safe
   end
+
+def alerts
+  alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+  if alert
+    alert_generator alert
+  end
+
+end
+
+def alert_generator msg
+  js add_gritter(msg, title: "Stebs Portfolio", sticky:false)
+end
 
 end

@@ -24,10 +24,13 @@
 
 <div class="container">
  <div class="row">
-  <div class="col-md-7">
+  <div class="col-md-3">
     <%= image_tag @portfolio.main_image unless @portfolio.main_image.nil?  %>
   </div>
-  <div class="col-md-5">
+  <div class="col-md-3">
+    <%= image_tag @portfolio.thumb_image unless @portfolio.thumb_image.nil?  %>
+  </div>
+  <div class="col-md-6">
     <h1><%= @portfolio.title %></h1>
 
     <hr>

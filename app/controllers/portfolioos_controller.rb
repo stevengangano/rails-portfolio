@@ -62,7 +62,9 @@ class PortfolioosController < ApplicationController
     def portfolio_params
       params.require(:portfolioo).permit(:title,
                                          :subtitle,
-                                         :body)
+                                         :body,
+                                         :main_image)
+
     end
 
 end

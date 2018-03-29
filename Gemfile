@@ -12,6 +12,11 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'carrierwave'
+gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'
+gem 'mini_magick'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
+gem 'gritter', '~> 1.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
