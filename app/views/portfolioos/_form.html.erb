@@ -4,22 +4,20 @@
    <% end %>
 </ul>
 
-<br>
-
 <%= form_for(@portfolio) do |f| %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :subtitle %><br>
-    <%= f.text_field :subtitle %>
+    <%= f.text_field :subtitle, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class:'form-control', rows: 20 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
   </div>
 <% end %>

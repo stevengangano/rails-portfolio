@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title> <%= @page_title %> </title>
+
+  <meta name="keywords" content="<%= @seo_keywords %>" />
+
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
+
+
+  <!-- Anything in style sheets will be inherited from applicaton -->
+  <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'shared/portfolio_nav' %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %> <br>
+
+<%= render 'shared/portfolio_footer' %>
+
+<!-- <%= params.inspect %> -->
+
+</body>
+</html>

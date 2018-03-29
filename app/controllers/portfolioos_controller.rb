@@ -1,10 +1,11 @@
 class PortfolioosController < ApplicationController
   #instead of application.html.erb, it uses portfolio.html.erb
-  # layout "portfolio"
+  layout "portfolio"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
     @portfolio = Portfolioo.all
+    # @portfolio = Portfolioo.paginate(page: params[:page], per_page: 5)
     @page_title = "Portfolio | Home"
   end
 

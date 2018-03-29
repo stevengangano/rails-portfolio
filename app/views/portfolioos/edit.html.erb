@@ -1,3 +1,8 @@
-<h1> Edit form </h1><
+<div class="col-sm-8 blog-main">
 
-<%= render 'form' %>
+  <td><%= link_to "Show", portfolio_show_path(@portfolio), class:'btn btn-primary' %></td>
+  <td><%= link_to "Edit", edit_portfolioo_path(@portfolio), class:'btn btn-success' %></td>
+
+  <%= render 'form' %>
+
+</div>

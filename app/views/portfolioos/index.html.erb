@@ -1,17 +1,70 @@
+<div class="text-center">
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Blogs</h1>
+<h1>Listing Portfolios</h1>
 
 <a href="portfolio/new"> Create New Item </a></br><br>
 
-<%= link_to "Create New Item", new_portfolio_path %> </a></br><br>
+<!-- <%= link_to "Create New Item", new_portfolio_path %> </a></br><br>
 <%= new_portfolio_path %> </a></br><br>
-<%= new_portfolio_url %> </a></br><br>
+<%= new_portfolio_url %> </a></br><br> -->
 
-<table>
+
+
+<% @portfolio.each do |portfolio_item| %>
+<div class="blog-post">
+  <h2 class="blog-post-title"> </h2>
+  <p class="blog-post-meta"> Created: <%= distance_of_time_in_words(portfolio_item.inspect, Time.now) %> ago </p>
+  <p class="blog-post-meta">
+    <td><%= link_to "Show", portfolio_show_path(portfolio_item) %></td> /
+    <td><%= link_to "Edit", edit_portfolioo_path(portfolio_item) if logged_in?(:site_admin) %></td> /
+    <!-- <td><a href="/portfolioos/<%= portfolio_item.id %>/edit"> Edit Two</a></td> -->
+    <td><%= link_to "Delete", portfolioo_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
+  <p>
+    <%= portfolio_item.body %>
+  </p>
+
+</div>
+<% end %>
+
+
+<div class="album text-muted">
+  <div class="container">
+      <div class="row">
+          <% @portfolio.each do |portfolio_item| %>
+          <div class="card">
+            <%= image_tag portfolio_item.main_image unless portfolio_item.main_image.nil? %>
+            <span class="card-text">  <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %> </span> <%= portfolio_item.subtitle %>
+          </div>
+          <% end %>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>Title</th>
+      <th>Created</th>
       <th>Body</th>
       <th>Subtitle</th>
       <th>Main Image</th>
@@ -24,6 +77,7 @@
     <% @portfolio.each do |portfolio_item| %>
       <tr>
         <td><%= portfolio_item.title %></td>
+        <td><%= distance_of_time_in_words(portfolio_item.inspect, Time.now) %> ago </td>
         <td><%= portfolio_item.subtitle %></td>
         <td><%= portfolio_item.body %></td>
         <td><%= image_tag portfolio_item.main_image unless portfolio_item.main_image.nil? %></td>
@@ -31,10 +85,10 @@
         <td><%= link_to "Show", portfolio_show_path(portfolio_item) %></td>
         <td><%= link_to "Edit", edit_portfolioo_path(portfolio_item) if logged_in?(:site_admin) %></td>
         <!-- <td><a href="/portfolioos/<%= portfolio_item.id %>/edit"> Edit Two</a></td> -->
-        <td><%= link_to "Delete", portfolioo_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
+        <!-- <td><%= link_to "Delete", portfolioo_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br> -->
