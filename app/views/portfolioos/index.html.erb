@@ -33,12 +33,12 @@
 <div class="album text-muted">
   <div class="container">
       <div class="row">
-          <% @portfolio.each do |portfolio_item| %>
           <div class="card">
-            <%= image_tag portfolio_item.main_image unless portfolio_item.main_image.nil? %>
-            <span class="card-text">  <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %> </span> <%= portfolio_item.subtitle %>
+            <% @portfolio.each do |portfolio_item| %>
+              <%= image_tag portfolio_item.main_image unless portfolio_item.main_image.nil? %>
+              <span class="card-text">  <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item)  %> </span> <%= portfolio_item.subtitle %>
+            <% end %>
           </div>
-          <% end %>
       </div>
   </div>
 </div>

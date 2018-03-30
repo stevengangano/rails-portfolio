@@ -17,6 +17,7 @@ gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'
 gem 'mini_magick'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
 gem 'gritter', '~> 1.2'
+gem 'twitter', '~> 6.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

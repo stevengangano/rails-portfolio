@@ -6,6 +6,20 @@
 @import 'bootstrap';
 @import 'gritter';
 
+.tech-news {
+  font-size: 20px;
+  margin: 20px;
+}
+
+.tech-news a {
+  color: green;
+}
+
+.tech-news > .card {
+  border: 2px solid black;
+  padding: 30px;
+}
+
 .portfolio-nav-link {
   display: inline;
   position: relative;

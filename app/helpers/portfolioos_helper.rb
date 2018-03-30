@@ -14,8 +14,7 @@ module PortfolioosHelper
 
   def nav_helper style, tag_type
 nav_links = <<NAV
-<#{tag_type}><a href="#{root_path}" class="#{style}">Home</a></#{tag_type}>
-<#{tag_type}><a href="#{portfolio_path}" class="#{style}">About me</a></#{tag_type}>
+<#{tag_type}><a href="#{tech_news_path}" class="#{style}">Tech News</a></#{tag_type}>
 NAV
     nav_links.html_safe
   end

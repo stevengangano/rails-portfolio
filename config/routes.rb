@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: "home#index"
+  get 'tech-news', to: 'home#tech_news'
 
   #creating a custom route
   resources :blogs do
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
   get '/portfolio', to: 'portfolioos#index', as: 'portfolio'
   get '/portfolio/new', to: 'portfolioos#new', as: 'new_portfolio'
   get 'portfolio/:id', to: 'portfolioos#show', as: 'portfolio_show'
+
+
 
   devise_for :users, path: '', path_names: { sign_in: 'login',
   sign_out: 'logout', sign_up: 'register'}
