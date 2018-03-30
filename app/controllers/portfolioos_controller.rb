@@ -1,10 +1,11 @@
 class PortfolioosController < ApplicationController
   #instead of application.html.erb, it uses portfolio.html.erb
   layout "portfolio"
+  before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
-    @portfolio = Portfolioo.all
+    @portfolios = Portfolioo.recent.all
     # @portfolio = Portfolioo.paginate(page: params[:page], per_page: 5)
     @page_title = "Portfolio | Home"
   end
@@ -31,12 +32,12 @@ class PortfolioosController < ApplicationController
   end
 
   def edit
-    @portfolio = Portfolioo.find(params[:id])
+    # @portfolio = Portfolioo.find(params[:id])
   end
 
   #no template
   def update
-    @portfolio = Portfolioo.find(params[:id])
+    # @portfolio = Portfolioo.find(params[:id])
     if @portfolio.update(portfolio_params)
       flash[:notice] = "Article was successfully updated"
       redirect_to portfolio_path
@@ -46,16 +47,17 @@ class PortfolioosController < ApplicationController
   end
 
   def show
-    @portfolio = Portfolioo.find(params[:id])
+    # @portfolio = Portfolioo.find(params[:id])
   end
 
   #no template
   def destroy
-    @portfolio = Portfolioo.find(params[:id])
+    # @portfolio = Portfolioo.find(params[:id])
     @portfolio.destroy
     flash[:notice] = "Article was successfully deleted"
     redirect_to portfolio_path
   end
+
 
   private
   #method to add data to the database
@@ -66,5 +68,11 @@ class PortfolioosController < ApplicationController
                                          :main_image)
 
     end
+
+  def set_portfolio_item
+    @portfolio = Portfolioo.find(params[:id])
+  end
+
+
 
 end

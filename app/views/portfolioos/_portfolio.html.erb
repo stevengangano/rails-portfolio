@@ -1,0 +1,10 @@
+<div class="blog-post">
+  <h2 class="blog-post-title"> </h2>
+  <p class="blog-post-meta"> Created: <%= distance_of_time_in_words(portfolio.inspect, Time.now) %> ago </p>
+  <p class="blog-post-meta">
+    <td><%= link_to "Show", portfolio_show_path(portfolio) %></td> /
+    <td><%= link_to "Edit", edit_portfolioo_path(portfolio) if logged_in?(:site_admin) %></td> /
+    <td><%= link_to "Delete", portfolioo_path(portfolio), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
+  <p><%= portfolio.body %></p>
+
+</div>

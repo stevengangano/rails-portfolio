@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   get 'tech-news', to: 'home#tech_news'
 
+  resources :topics, only: [:index, :show]
+
   #creating a custom route
   resources :blogs do
     member do

@@ -27,4 +27,13 @@ validates_presence_of :title, :subtitle, :body, :main_image
     self.thumb_image ||= "http://placehold.it/200x200"
   end
 
+
+  def self.two_portfolios
+    limit(2)
+  end
+
+  def self.recent
+    order("created_at DESC")
+  end
+
 end
